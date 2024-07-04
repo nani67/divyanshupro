@@ -1,0 +1,648 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./index.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link href="./index.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="bg-white">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Bailey Banquet</span>
+              <img class="h-24 w-auto" src="./favicon.png" alt="logo">
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+
+
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">About us</a>
+
+
+            <div class="relative">
+                <button type="button" id="servicesButtonNav" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+                  Services
+                  <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+        
+                <!--
+                  'Product' flyout menu, show/hide based on flyout menu state.
+        
+                  Entering: "transition ease-out duration-200"
+                    From: "opacity-0 translate-y-1"
+                    To: "opacity-100 translate-y-0"
+                  Leaving: "transition ease-in duration-150"
+                    From: "opacity-100 translate-y-0"
+                    To: "opacity-0 translate-y-1"
+                -->
+                <div id="servicesNavItems" class="opacity-0 translate-y-1 absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                  <div class="p-4">
+
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                        <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            <img src="./engagement_ring.svg" style="width: 70%; height: 70%;">
+                          <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                          </svg> -->
+                        </div>
+                        <div class="flex-auto">
+                          <a href="#" class="block font-semibold text-gray-900">
+                            Engagement
+                            <span class="absolute inset-0"></span>
+                          </a>
+                          <p class="mt-1 text-gray-600">For a new beginning, let's have it great!</p>
+                        </div>
+                      </div>
+
+
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                      <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+
+                        <img src="./wedding_invitation.svg" style="width: 70%; height: 70%;">
+                        <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                        </svg> -->
+                      </div>
+                      <div class="flex-auto">
+                        <a href="#" class="block font-semibold text-gray-900">
+                          Wedding
+                          <span class="absolute inset-0"></span>
+                        </a>
+                        <p class="mt-1 text-gray-600">A special place to celebrate the new life</p>
+                      </div>
+                    </div>
+
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                        <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+
+                        <img src="./suit_reception.svg" style="width: 70%; height: 70%;">
+                          <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                          </svg> -->
+                        </div>
+                        <div class="flex-auto">
+                          <a href="#" class="block font-semibold text-gray-900">
+                            Reception
+                            <span class="absolute inset-0"></span>
+                          </a>
+                          <p class="mt-1 text-gray-600">For an awesome couple, we have an awesome place!</p>
+                        </div>
+                      </div>
+
+                      <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                        <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            <img src="./birthday_cake.svg" style="width: 70%; height: 70%;">
+                          <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                          </svg> -->
+                        </div>
+                        <div class="flex-auto">
+                          <a href="#" class="block font-semibold text-gray-900">
+                            Birthday
+                            <span class="absolute inset-0"></span>
+                          </a>
+                          <p class="mt-1 text-gray-600">Happy Birthday! Let's make a blast!</p>
+                        </div>
+                      </div>
+
+                      <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                        <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            <img src="./anniversary_candle.svg" style="width: 70%; height: 70%;">
+                          <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                          </svg> -->
+                        </div>
+                        <div class="flex-auto">
+                          <a href="#" class="block font-semibold text-gray-900">
+                            Anniversary
+                            <span class="absolute inset-0"></span>
+                          </a>
+                          <p class="mt-1 text-gray-600">Congratulations! We've got it covered!</p>
+                        </div>
+                      </div>
+                    
+                      
+
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                        <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            <img src="./corporate_building.svg" style="width: 70%; height: 70%;">
+                          <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                          </svg> -->
+                        </div>
+                        <div class="flex-auto">
+                          <a href="#" class="block font-semibold text-gray-900">
+                            Corporate Events
+                            <span class="absolute inset-0"></span>
+                          </a>
+                          <p class="mt-1 text-gray-600">Anything business related? Let's talk business!</p>
+                        </div>
+                      </div>
+                      
+                    
+                    
+                  </div>
+                  <!-- <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                      <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+                      </svg>
+                      Watch demo
+                    </a>
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                      <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+                      </svg>
+                      Contact sales
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+      
+              
+
+
+            <div class="relative">
+                <button type="button" id="galleryButtonNav" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+                  Gallery
+                  <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+        
+                <!--
+                  'Product' flyout menu, show/hide based on flyout menu state.
+        
+                  Entering: "transition ease-out duration-200"
+                    From: "opacity-0 translate-y-1"
+                    To: "opacity-100 translate-y-0"
+                  Leaving: "transition ease-in duration-150"
+                    From: "opacity-100 translate-y-0"
+                    To: "opacity-0 translate-y-1"
+                -->
+                <div id="galleryNavItems" class="opacity-0 translate-y-1 absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                  <div class="p-4">
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                      <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <img src="./photo_camera.svg" style="width: 70%; height: 70%;">
+                        <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                        </svg> -->
+                      </div>
+                      <div class="flex-auto">
+                        <a href="#" class="block font-semibold text-gray-900">
+                          Photos
+                          <span class="absolute inset-0"></span>
+                        </a>
+                        <p class="mt-1 text-gray-600">Crystal clear view of our place</p>
+                      </div>
+                    </div>
+                    <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                      <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+
+                        <img src="./video_camera.svg" style="width: 70%; height: 70%;">
+                        <!-- <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                        </svg> -->
+                      </div>
+                      <div class="flex-auto">
+                        <a href="#" class="block font-semibold text-gray-900">
+                          Videos
+                          <span class="absolute inset-0"></span>
+                        </a>
+                        <p class="mt-1 text-gray-600">Enjoy a complete view</p>
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                  <!-- <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                      <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+                      </svg>
+                      Watch demo
+                    </a>
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                      <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+                      </svg>
+                      Contact sales
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+      
+              
+
+
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Contact us</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"></a>
+          </div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div class="lg:hidden" role="dialog" aria-modal="true">
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <div class="fixed inset-0 z-10"></div>
+          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <!-- <span class="sr-only">Your Company</span> -->
+                 
+                <img class="h-24 w-auto" src="./favicon.png" alt="logo">
+              </a>
+              <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <!-- <span class="sr-only">Close menu</span> -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                
+                
+                <div class="space-y-2 py-6">
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About us</a>
+                    <div class="-mx-3">
+                        <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" aria-controls="disclosure-1" aria-expanded="false">
+                          Services
+                          <!--
+                            Expand/collapse icon, toggle classes based on menu open state.
+          
+                            Open: "rotate-180", Closed: ""
+                          -->
+                          <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                          </svg>
+                        </button>
+                        <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                        <div class="mt-2 space-y-2" id="disclosure-1">
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Engagement</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Wedding</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Reception</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Birthday</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Anniversaries</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Corporate Party</a>
+                        </div>
+                      </div>
+                    <div class="-mx-3">
+                        <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" aria-controls="disclosure-1" aria-expanded="false">
+                          Gallery
+                          <!--
+                            Expand/collapse icon, toggle classes based on menu open state.
+          
+                            Open: "rotate-180", Closed: ""
+                          -->
+                          <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                          </svg>
+                        </button>
+                        <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                        <div class="mt-2 space-y-2" id="disclosure-1">
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Photos</a>
+                          <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Videos</a>
+                        </div>
+                      </div>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact us</a>
+                </div>
+
+                <!-- <div class="py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+
+  <main>
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        
+
+
+
+        <video id="background-video" src="./background_video.mp4" muted autoplay loop></video>
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <!-- <div class=" transform-gpu overflow-hidden blue-xl" style="position: fixed; z-index: -1;
+  min-width: 200%;">
+        
+    </div> -->
+    <!-- <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" style="pointer-events: none;" aria-hidden="true">
+      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div> -->
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div style="color: white;" class="relative px-3 py-1 text-xl leading-6 text-white-900 ring-0 ring-gray-900/10 hover:ring-gray-900/20">
+          Welcome to
+        </div>
+
+
+
+        <!-- <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            Welcome to
+          </div> -->
+
+
+      </div>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-white-900 sm:text-6xl" style="font-family: 'Times New Roman', Times, serif;color: white;">Bailey Banquet</h1>
+        <p class="mt-6 text-lg leading-8 text-white-600" style="color: white;">A beautiful paradise, residing in Patna</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get a quote</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900" style="color: white;">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+      <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div> -->
+  </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="text-center  mb-5 mt-20 sm:py-12">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl" style="font-family: 'Tiro Devanagari Hindi', serif;
+  font-weight: 400;
+  font-style: normal;">नमस्ते 🙏</h1>
+        <p class="mt-2 ml-6 mr-6 text-lg leading-8 px-24 sm:px-8 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra porttitor massa, nec interdum dolor lacinia a. Vestibulum rhoncus tincidunt enim, sit amet volutpat tellus pretium ac. In hac habitasse platea dictumst. Vestibulum luctus vehicula quam, a viverra nulla bibendum eu. Sed orci risus, varius quis ex et, iaculis fermentum purus. Donec suscipit neque vel leo ultricies, vel facilisis metus rutrum. Pellentesque id lectus sed mi placerat viverra a id sapien. Ut blandit odio id nisi sollicitudin, ac interdum quam suscipit.
+
+            Quisque id consectetur purus, ac mattis diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet diam blandit, porttitor massa non, lobortis nisi. Suspendisse tincidunt ante massa, ut efficitur dui molestie sed. Phasellus ac tempus massa. Sed ultrices fringilla purus sit amet consectetur. Suspendisse eu massa nisi. Aliquam nulla nibh, rutrum et diam a, ultricies gravida odio. Quisque a orci sodales, faucibus elit eget, sodales ante. Nunc tincidunt tellus at nulla dapibus vestibulum. Fusce felis orci, maximus a ex et, gravida aliquam erat. Aenean tempor pharetra lorem bibendum elementum. Aliquam tincidunt facilisis metus. Curabitur malesuada pulvinar arcu congue ullamcorper.
+            
+            Sed ac metus odio. Aenean malesuada leo eu nibh feugiat, quis faucibus massa luctus. Vivamus tellus urna, imperdiet quis maximus ornare, consequat at tortor. Suspendisse aliquam, ipsum pharetra efficitur mollis, felis justo luctus arcu, nec venenatis felis ex ut turpis. Maecenas eu diam egestas, euismod tellus eget, hendrerit velit. Integer pellentesque nibh a nunc ullamcorper, sed malesuada urna auctor. Sed egestas, nulla id rhoncus consequat, neque augue auctor massa, ac mattis ligula massa quis dui. Pellentesque tempor urna ac luctus facilisis. Etiam vel lacus quis felis viverra aliquam. Nam porttitor sit amet velit ut ultricies. Curabitur tincidunt tortor vel ex ultricies, consectetur mollis ante malesuada. In lectus tellus, ullamcorper eu dolor a, elementum elementum lectus. Integer non finibus ante, non malesuada leo.</p>
+      </div>
+
+
+  <div class="bg-white py-12 sm:py-32 top-100">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+          <dt class="text-base leading-7 text-gray-600">Open Field area</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">15000 Sq.ft</dd>
+        </div>
+        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+          <dt class="text-base leading-7 text-gray-600">Kitchen area</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1500 Sq.ft</dd>
+        </div>
+        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+          <dt class="text-base leading-7 text-gray-600">Construction area</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2000 Sq.ft</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="bg-white px-6 lg:px-20 ">
+    <div class="ring-1 rounded-md ring-gray-900/20 px-6 py-3 ">
+
+        <h1 class="gap-x-6 py-4 font-bold text-black-900 text-4xl">Facilities we provide</h1>
+
+  <ul role="list" class="divide-y divide-gray-100" >
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">variables</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">Non A/C Hall - 3000 Sq.ft (Ground Floor)</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">ac_unit</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">A/C Hall - 2000 Sq.ft (1st Floor) equipped with seperate rooms for Bride and Groom with attached washrooms.</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">ac_unit</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">4 A/C Rooms</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">restaurant</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">Utensils are provided by Banquet <span class="ring-1 ring-gray-900/10 rounded-full px-3 py-1 ">free of cost</span></p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">videocam</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">CCTV survelliance for whole area</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">battery_charging_full</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">Back-up Automatic Generator Supply available in case of any power-cuts</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">person_apron</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">Electrician, Safai Karmi and other staff are <span class="ring-1 ring-gray-900/10 rounded-full px-3 py-1 ">complementary</span> </p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">headphones</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">DJ Services are available on pay-basis</p>
+    </li>
+    <li class="flex justify-left gap-x-6 py-3">
+        <span class="material-symbols-rounded">local_parking</span>
+        <p class="text-sm font-semibold leading-6 text-gray-900">Large Parking Area is available</p>
+    </li>
+  </ul>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <div class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Book Your Stay</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./engagement_main.jpg" alt="Wedding Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Engagement Celebrations</h3>
+            <p class="text-gray-600 mb-4">Enjoy a relaxing stay at this stunning beach house with breathtaking views and modern amenities.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./wedding_main.jpg" alt="Wedding Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Wedding Celebrations</h3>
+            <p class="text-gray-600 mb-4">Escape to this cozy cabin in the mountains, perfect for a peaceful retreat in nature.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./reception_main.jpg" alt="Place Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Reception</h3>
+            <p class="text-gray-600 mb-4">Experience the city life in this luxurious apartment with all the conveniences at your fingertips.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./anniversary_main.jpg" alt="Place Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Anniversaries</h3>
+            <p class="text-gray-600 mb-4">Relax in this charming cottage in the countryside, ideal for a quiet getaway.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+        <!-- Card 5 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./birthday_main.jpg" alt="Place Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Birthdays</h3>
+            <p class="text-gray-600 mb-4">Stay in this modern loft with sleek design and a central location for easy access to all the city has to offer.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+        <!-- Card 6 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="./corporate_main.jpg" alt="Place Image" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Corporate Events</h3>
+            <p class="text-gray-600 mb-4">Enjoy the charm of this rustic farmhouse, perfect for a family vacation or group getaway.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Book Now</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Testimonials</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"Tailwind CSS makes creating beautiful designs so much easier!"</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">John Doe</p>
+                    <p class="text-sm text-gray-600">Software Engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"I love how easy it is to customize components with Tailwind."</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">Jane Smith</p>
+                    <p class="text-sm text-gray-600">Product Manager</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"Tailwind's utility-first approach is a game-changer."</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">Emily Johnson</p>
+                    <p class="text-sm text-gray-600">UI/UX Designer</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"Tailwind has made my development process so much faster."</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">Michael Brown</p>
+                    <p class="text-sm text-gray-600">Front-end Developer</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"I can't imagine going back to a CSS framework without utility classes."</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">Sarah Davis</p>
+                    <p class="text-sm text-gray-600">Web Developer</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-600 mb-4">"Tailwind has simplified my workflow immensely."</p>
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="User Image" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-semibold text-gray-800">David Wilson</p>
+                    <p class="text-sm text-gray-600">Graphic Designer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="blur-4xl">
+
+    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+</div>
+
+
+
+
+  </main>
+
+
+
+
+
+  <div>
+    Nani is working on it
+  </div>
+  
+      
+</body>
+
+<a href="https://www.freepik.com/free-photo/hands-indian-bride-groom-intertwined-together-making-authentic-wedding-ritual_6448862.htm#query=wedding&position=0&from_view=keyword&track=sph&uuid=6903fb40-028c-46ce-96b4-75d82ecdb87a">Image by freepic.diller</a> on Freepik
+</html>
