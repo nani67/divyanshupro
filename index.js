@@ -58,3 +58,52 @@ document.getElementById('galleryButtonNav').addEventListener('click', () => {
     closeOpenNav('galleryNavItems');
     dismissOtherNavElements('servicesNavItems');
 });
+
+document.querySelectorAll('.buttonForContact').forEach(e => {
+    e.addEventListener('click', () => {
+        document.getElementById('contactus').scrollIntoView({ behavior: 'smooth' });
+    })
+})
+
+document.querySelectorAll('.buttonForFunctionItems').forEach(e => {
+    e.addEventListener('click', () => {
+        document.getElementById('functionItems').scrollIntoView({behavior: 'smooth'});
+    })
+})
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        'imagesForCarousel/1.jpeg',
+        'imagesForCarousel/2.jpeg',
+        'imagesForCarousel/3.jpeg',
+        'imagesForCarousel/4.jpeg',
+        'imagesForCarousel/5.jpeg',
+        'imagesForCarousel/7.jpeg',
+        'imagesForCarousel/6.jpeg',
+    ];
+
+    const gallery = document.getElementById('loadImages');
+    images.forEach(src => {
+        const imgDiv = document.createElement('div');
+        imgDiv.className = 'overflow-hidden rounded-lg shadow-lg';
+        const img = document.createElement('img');
+        img.src = src;
+        img.style = 'object-fit: cover';
+        img.width = '100%';
+        img.height = '100%';
+        img.alt = 'Gallery Image';
+        img.className = 'w-full h-full';
+
+        imgDiv.appendChild(img);
+        gallery.appendChild(imgDiv);
+    });
+
+    setTimeout(() => {
+        document.getElementById('mainPage').scrollIntoView();
+        console.log('print');
+    }, 1000);
+});
+
+
