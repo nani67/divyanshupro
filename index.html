@@ -25,7 +25,7 @@
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="#mainPage" class="-m-1.5 p-1.5">
             <span class="sr-only">Champaran Marriage Bhavan</span>
             <img class="h-24 w-auto" src="./favicon.png" alt="logo" />
           </a>
@@ -53,10 +53,10 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          <a href="#mainPage" class="text-sm font-semibold leading-6 text-gray-900"
             >Home</a
           >
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          <a href="#aboutus" class="text-sm font-semibold leading-6 text-gray-900"
             >About us</a
           >
 
@@ -391,7 +391,7 @@
             </div>
           </div>
 
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          <a href="#contactus" onclick="dialogDismiss()" class="text-sm font-semibold leading-6 text-gray-900"
             >Contact us</a
           >
         </div>
@@ -440,12 +440,12 @@
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
                 <a
-                  href="#"
+                  href="#mainPage" onclick="dialogDismiss()"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >Home</a
                 >
                 <a
-                  href="#"
+                  href="#aboutus" onclick="dialogDismiss()"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >About us</a
                 >
@@ -472,17 +472,17 @@
                   </button>
                   <div class="mt-2 space-y-2" id="disclosure-1">
                     <a
-                      href="#engagementCard"
+                      href="#engagementCard" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Engagement</a
                     >
                     <a
-                      href="#weddingCard"
+                      href="#weddingCard" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Wedding</a
                     >
                     <a
-                      href="#receptionCard"
+                      href="#receptionCard" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Reception</a
                     >
@@ -492,12 +492,12 @@
                       >Birthday</a
                     >
                     <a
-                      href="#anniversaryCard"
+                      href="#anniversaryCard" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Anniversaries</a
                     >
                     <a
-                      href="#corporateCard"
+                      href="#corporateCard" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Corporate Party</a
                     >
@@ -526,19 +526,19 @@
                   </button>
                   <div class="mt-2 space-y-2" id="disclosure-2">
                     <a
-                      href="#gallery"
+                      href="#gallery" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Photos</a
                     >
                     <a
-                      href="#gallery"
+                      href="#gallery" onclick="dialogDismiss()"
                       class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >Videos</a
                     >
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="#contactus" onclick="dialogDismiss()"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >Contact us</a
                 >
@@ -549,6 +549,13 @@
       </div>
 
       <script>
+
+        var dialogDismiss = function() {
+
+          const sidePane = document.getElementById("sidePane");
+          sidePane.classList.add("hidden");
+        };
+
         document.addEventListener("DOMContentLoaded", function () {
           const sidePane = document.getElementById("sidePane");
           const openButton = document.getElementById("openButton");
@@ -765,7 +772,7 @@
             <li class="flex justify-left gap-x-6 py-3">
               <span class="material-symbols-rounded">ac_unit</span>
               <p class="text-sm font-semibold leading-6 text-gray-900">
-                4 A/C Rooms
+                10 A/C Rooms
               </p>
             </li>
             <li class="flex justify-left gap-x-6 py-3">
@@ -933,7 +940,7 @@
             <p class="text-gray-600 mb-4">
               Looking forward to making your company event a successful one?
               We'll help you in this by providing the best corporate event
-              services in Patna.
+              services in Betiya.
             </p>
             <button
               class="buttonForContact bg-indigo-600 text-white px-4 py-2 rounded-lg"
