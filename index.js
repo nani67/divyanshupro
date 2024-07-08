@@ -100,6 +100,58 @@ document.addEventListener('DOMContentLoaded', function() {
         gallery.appendChild(imgDiv);
     });
 
+
+    const videoPaths = [
+        'imagesForCarousel/v1.mp4', 
+        'imagesForCarousel/v2.mp4', 
+        'imagesForCarousel/v3.mp4', 
+        'imagesForCarousel/v4.mp4'
+    ];
+    const videoGallery = document.getElementById('video-gallery');
+    const videoModal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalVideoSource = document.getElementById('modal-video-source');
+    const closeModal = document.getElementById('close-modal');
+
+    console.log('Video side');
+
+    // Function to populate video gallery
+    videoPaths.forEach(path => {
+        const videoThumbnail = document.createElement('div');
+        videoThumbnail.className = 'overflow-hidden rounded-lg shadow-lg';
+        videoThumbnail.classList.add('relative', 'cursor-pointer', 'aspect-w-16', 'aspect-h-9', 'bg-gray-200');
+        videoThumbnail.innerHTML = `
+            <video class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                <source src="${path}#t=0.1" type="video/mp4">
+            </video>
+        `;
+        videoThumbnail.addEventListener('click', () => {
+            modalVideoSource.src = path;
+            modalVideo.load();
+            videoModal.classList.remove('hidden');
+        });
+        videoThumbnail.style = 'height: 33vw;';
+        console.log(videoThumbnail);
+        
+        console.log('Video appending');
+        videoGallery.appendChild(videoThumbnail);
+    });
+
+    // Function to close modal
+    closeModal.addEventListener('click', () => {
+        modalVideo.pause();
+        videoModal.classList.add('hidden');
+    });
+
+    // Close the modal when clicking outside the video
+    window.addEventListener('click', (event) => {
+        if (event.target === videoModal) {
+            modalVideo.pause();
+            videoModal.classList.add('hidden');
+        }
+    });
+
+
     setTimeout(() => {
         document.getElementById('mainPage').scrollIntoView();
         console.log('print');
