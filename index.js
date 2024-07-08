@@ -75,13 +75,13 @@ document.querySelectorAll('.buttonForFunctionItems').forEach(e => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const images = [
-        'imagesForCarousel/1.jpeg',
-        'imagesForCarousel/2.jpeg',
-        'imagesForCarousel/3.jpeg',
-        'imagesForCarousel/4.jpeg',
-        'imagesForCarousel/5.jpeg',
-        'imagesForCarousel/7.jpeg',
-        'imagesForCarousel/6.jpeg',
+        'imagesForCarousel/1.webp',
+        'imagesForCarousel/2.webp',
+        'imagesForCarousel/3.webp',
+        'imagesForCarousel/4.webp',
+        'imagesForCarousel/5.webp',
+        'imagesForCarousel/7.webp',
+        'imagesForCarousel/6.webp',
     ];
 
     const gallery = document.getElementById('loadImages');
