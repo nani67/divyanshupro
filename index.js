@@ -81,7 +81,19 @@ document.addEventListener('DOMContentLoaded', function() {
         'imagesForCarousel/4.webp',
         'imagesForCarousel/5.webp',
         'imagesForCarousel/7.webp',
-        'imagesForCarousel/6.webp',
+        'imagesForCarousel/8.webp',
+        'imagesForCarousel/9.webp',
+        'imagesForCarousel/10.webp',
+        'imagesForCarousel/11.webp',
+        'imagesForCarousel/12.webp',
+        'imagesForCarousel/13.webp',
+        'imagesForCarousel/14.webp',
+        'imagesForCarousel/15.webp',
+        'imagesForCarousel/16.webp',
+        'imagesForCarousel/17.webp',
+        'imagesForCarousel/18.webp',
+        'imagesForCarousel/19.webp',
+        'imagesForCarousel/20.webp'
     ];
 
     const gallery = document.getElementById('loadImages');
