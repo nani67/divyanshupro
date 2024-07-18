@@ -127,7 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'imagesForCarousel/v6.mp4', 
         'imagesForCarousel/v7.mp4',
         'imagesForCarousel/v8.mp4',
-        'imagesForCarousel/v9.mp4'
+        'imagesForCarousel/v9.mp4',
+        'imagesForCarousel/v10.mp4'
     ];
     const videoGallery = document.getElementById('video-gallery');
     const videoModal = document.getElementById('video-modal');
