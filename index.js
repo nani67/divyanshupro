@@ -93,7 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
         'imagesForCarousel/17.webp',
         'imagesForCarousel/18.webp',
         'imagesForCarousel/19.webp',
-        'imagesForCarousel/20.webp'
+        'imagesForCarousel/20.webp',
+        'imagesForCarousel/21.jpeg',
+        'imagesForCarousel/22.jpeg',
+        'imagesForCarousel/23.jpeg',
+        'imagesForCarousel/24.jpeg',
+        'imagesForCarousel/25.jpeg'
     ];
 
     const gallery = document.getElementById('loadImages');
